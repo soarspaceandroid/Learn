@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
 import com.eftimoff.androipathview.PathView;
@@ -15,6 +16,7 @@ import com.example.administrator.myapplication.celuv.AgeLimit;
 import com.example.administrator.myapplication.celuv.BaseAge;
 import com.example.administrator.myapplication.factory.UserFactory;
 import com.example.administrator.myapplication.observer.User;
+import com.example.administrator.myapplication.proxy.DontaiProxy;
 import com.example.administrator.myapplication.proxy.Image;
 import com.example.administrator.myapplication.proxy.ProxyImage;
 import com.example.administrator.myapplication.rxjava.Fix;
@@ -25,6 +27,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
+
+import pl.droidsonroids.gif.GifDrawable;
+import pl.droidsonroids.gif.GifImageView;
 
 /**
  * Created by gaofei on 2016/8/24.
@@ -59,6 +64,8 @@ public class MainActivity extends AppCompatActivity implements Observer {
 
         proxy();
 
+        dongtaiProxy();
+
         Fix fix  = new Fix("1" , "2" , "3");
         Fix fix1  = new Fix("4" , "5" , "6");
         Fix fix2  = new Fix("7" , "8" , "9");
@@ -70,6 +77,12 @@ public class MainActivity extends AppCompatActivity implements Observer {
 
 
         RxLearn.doData(list);
+
+
+        GifImageView imageView = (GifImageView)findViewById(R.id.gif);
+        GifDrawable gifDrawable = (GifDrawable) imageView.getDrawable();
+        gifDrawable.setLoopCount(100);
+        imageView.setVisibility(View.GONE);
 
     }
 
@@ -149,6 +162,13 @@ public class MainActivity extends AppCompatActivity implements Observer {
     private void proxy(){
         Image image = new ProxyImage();
         image.displayImage();
+    }
+
+
+
+    private void dongtaiProxy(){
+        DontaiProxy dontaiProxy = new DontaiProxy();
+        dontaiProxy.proxt(DontaiProxy.MyProxy.class);
     }
 
 }

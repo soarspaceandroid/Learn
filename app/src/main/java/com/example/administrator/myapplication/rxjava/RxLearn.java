@@ -10,12 +10,7 @@ public class RxLearn  {
 
     public static void doData(List<Fix> fix){
 
-//        Observable.create(new Observable.OnSubscribe<Fix>() {
-//            @Override
-//            public void call(Subscriber<? super Fix> subscriber) {
-//                subscriber.onNext(f);
-//            }
-//        }).o
+//        Observable.from()
 
     }
 

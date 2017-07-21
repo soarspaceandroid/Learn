@@ -13,11 +13,27 @@
 
 
 
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gif"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/loading_gif"
+
+        />
+
+
 
     <TextView
         android:text="Hello World!"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+
+
+    <com.example.administrator.myapplication.MyView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 
 
     <com.eftimoff.androipathview.PathView
